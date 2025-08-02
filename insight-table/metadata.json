@@ -1,0 +1,5 @@
+{
+  "name": "Insight-table",
+  "description": "An AI-powered application to summarize and analyze product reviews from CSV or XLSX files. It provides a sentiment score, identifies key themes, and offers a concise overview of customer feedback.",
+  "requestFramePermissions": []
+}
