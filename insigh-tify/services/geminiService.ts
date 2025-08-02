@@ -106,7 +106,12 @@ export const analyzeReviews = async (reviewsText: string, categoryValue: string)
       },
     });
 
-    const jsonText = response.text.trim();
+    const jsonText = (response.text ?? "").trim();
+
+    if (!jsonText) {
+      throw new Error("No response text received from Gemini API.");
+    }
+
     const result: AnalysisResult = JSON.parse(jsonText);
 
     // Basic validation
