@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[dev]
+  functions = "netlify/functions"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/gemini"
+  to = "/.netlify/functions/geminiProxy"
+  status = 200
