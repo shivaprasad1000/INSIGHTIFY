@@ -96,15 +96,14 @@ export const analyzeReviews = async (reviewsText: string, categoryValue: string)
   `;
 
   try {
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents: prompt,
-      config: {
-        responseMimeType: "application/json",
-        responseSchema: reviewAnalysisSchema,
-        temperature: 0.1,
-      },
-    });
+    const response = await fetch('/api/gemini', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ prompt }),
+});
+
 
     const jsonText = response.text.trim();
     const result: AnalysisResult = JSON.parse(jsonText);
