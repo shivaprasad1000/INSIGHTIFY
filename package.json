@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:prod": "NODE_ENV=production npm run build"
   },
   "dependencies": {
     "@google/genai": "^1.12.0",
